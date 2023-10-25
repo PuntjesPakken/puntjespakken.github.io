@@ -7,67 +7,122 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            color: #fff;
+            background-color: #292E33;
             margin: 0;
             padding: 0;
         }
 
-        .header {
-            background-color: #333;
+        .menu {
+            background-color: #292E33;
+            border: 2px solid #000;
             color: #fff;
             text-align: center;
-            padding: 30px;
+            padding: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            background-color: #3D5166;
+            border: 2px solid #000;
+            color: #fff;
+            text-align: center;
+            padding: 28px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            text-align: center;
         }
 
         .cta {
-            background-color: #007BFF;
+            background-color: #3D5166;
+            border: 2px solid #000;
             color: #fff;
             text-align: center;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 18px;
         }
 
-        .cta a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .cta a:hover {
-            text-decoration: underline;
+        /* Add a CSS class to hide sections */
+        .hidden {
+            display: none;
         }
     </style>
+    <script>
+        // JavaScript to toggle between Home and Score sections
+        function showSection(sectionId) {
+            // Get all sections with the class "container"
+            var sections = document.querySelectorAll('.container');
+            
+            // Hide all sections
+            sections.forEach(function (section) {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
-    <div class="header">
-        <h1>⚠️ Puntjes Pakken ⚠️</h1>
-        <p>Commissieraad EST. May 2023</p>
+    <div class="menu">
+        <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0);" onclick="showSection('score')">Score</a>
+        <a href="javascript:void(0);" onclick="showSection('archive')">Archive</a>
+        <a href="javascript:void(0);" onclick="showSection('about')">About</a>
     </div>
 
-    <div class="container">
+    <div class="header">
+        <h1>⚠️ Puntjes Pakken ⚠️</h1>
+        <p>Commissieraad since May 2023</p>
+    </div>
+
+    <div id="home" class="container">
+        <!-- Content for the home page -->
         <h2>Puntjes Pakken:</h2>
         <p>De plek waar grote spelers maandelijks samenkomen om de meeste punten te pakken, en zo tot CHAMPION gekroond te worden.</p>
+        <!-- Your home page content here -->
+    </div>
 
-        <h2>Current Contenders:</h2>
-        <p>🥇 Nick Her ~ 415</p>
-        <p>🥈 Ravecave Ruben ~ 410</p>
-        <p>🥉 Cedrico Escobar ~ 223</p>        
-        <ul>
-            <li>Email: <a href="mailto:contact@example.com">contact@example.com</a></li>
-            <li>Phone: <a href="tel:+1234567890">123-456-7890</a></li>
-        </ul>
+    <div id="score" class="container hidden">
+        <!-- No content for the score page, it's empty for now -->
+        <!-- You can add content to the "Score" page later if needed -->
+    </div>
+
+    <div id="archive" class="container hidden">
+        <!-- Content for the archive page -->
+        <!-- Your archive page content here -->
+    </div>
+
+    <div id="about" class="container hidden">
+        <!-- Content for the about page -->
+        <!-- Your about page content here -->
     </div>
 
     <div class="cta">
-        <h2>Get Started Today</h2>
-        <p>Don't miss out! Join us now and experience the best in...</p>
-        <a href="#" target="_blank">Sign Up</a>
+        <h2>Ben jij een grote speler?</h2>
+        <p>Maak dan nu je account aan, of log in...</p>
+        <a href="#" target="_blank">Pak Puntjes</a>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
