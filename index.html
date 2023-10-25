@@ -60,21 +60,39 @@
             display: none;
         }
     </style>
-    <script>
-        // JavaScript to toggle between Home and Score sections
-        function showSection(sectionId) {
-            // Get all sections with the class "container"
-            var sections = document.querySelectorAll('.container');
-            
-            // Hide all sections
-            sections.forEach(function (section) {
-                section.classList.add('hidden');
-            });
+<script>
+    // JavaScript to toggle between Home and Score sections
+    function showSection(sectionId) {
+        // Get all sections with the class "container"
+        var sections = document.querySelectorAll('.container');
 
-            // Show the selected section
-            document.getElementById(sectionId).classList.remove('hidden');
+        // Hide all sections except the .cta section
+        sections.forEach(function (section) {
+            section.classList.add('hidden');
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).classList.remove('hidden');
+
+        // Hide the text content, title, and link inside the CTA section if it's not the "Home" page
+        var ctaText = document.querySelector('.cta p');
+        var ctaTitle = document.querySelector('.cta h2');
+        var ctaLink = document.querySelector('.cta a');
+
+        if (sectionId === 'home') {
+            // Show the text content, title, and link inside the CTA section
+            ctaText.style.display = 'block';
+            ctaTitle.style.display = 'block';
+            ctaLink.style.display = 'block';
+        } else {
+            // Hide the text content, title, and link inside the CTA section on other pages
+            ctaText.style.display = 'none';
+            ctaTitle.style.display = 'none';
+            ctaLink.style.display = 'none';
         }
-    </script>
+    }
+</script>
+    
 </head>
 <body>
     <div class="menu">
@@ -90,15 +108,17 @@
     </div>
 
     <div id="home" class="container">
-        <!-- Content for the home page -->
+        <!-- Content for the home page, including Contenders with emojis -->
         <h2>Puntjes Pakken:</h2>
         <p>De plek waar grote spelers maandelijks samenkomen om de meeste punten te pakken, en zo tot CHAMPION gekroond te worden.</p>
-        <!-- Your home page content here -->
+        <h2>Current Contenders:</h2>
+        <p>🥇 Nick Her ~ 634</p>
+        <p>🥈 Ravecave Ruben ~ 630</p>
+        <p>🥉 Johnny Calzone ~ 305</p>
     </div>
 
     <div id="score" class="container hidden">
-        <!-- No content for the score page, it's empty for now -->
-        <!-- You can add content to the "Score" page later if needed -->
+        <!-- No text for the score page, keeping the layout -->
     </div>
 
     <div id="archive" class="container hidden">
@@ -118,6 +138,25 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
